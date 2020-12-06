@@ -37,6 +37,7 @@ namespace aoc4
             }
             Console.WriteLine($"number of valid passports: {numberOfValidPassports}");
             // goede antwoord deel 1 = 250
+            // goede antwoord deel 2 = 158
 
 
 
@@ -78,14 +79,14 @@ namespace aoc4
 
                 var Eyecolors = new List<string> {"amb","blu","brn","gry","grn","hzl","oth"};
                 if (!Eyecolors.Contains(passport["ecl"])) return false;
-                
+
                 // nog eenje
-                    
+                if (!Regex.IsMatch(passport["pid"],"^[0-9]{9}$")) return false;
 
-
-                    return true;
+                // als alle velden goed zijn kom je hier:
+                return true;
             }
-            else // aantal velden klopt niet
+            else // als het aantal velden niet klopt
             {
                 
                return false;
